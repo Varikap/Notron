@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
+    <PreferenceCategory android:title="@string/posts" android:key="posts_settings">
+        <ListPreference
+            android:defaultValue="1"
+            android:dialogTitle="@string/see_posts_from"
+            android:entries="@array/see_posts_from"
+            android:entryValues="@array/see_posts_from"
+            android:key="@string/see_posts_from_key"
+            android:summary="%s"
+            android:title="@string/see_posts_from_title" />
+        <ListPreference
+            android:defaultValue="date"
+            android:entries="@array/popularity_or_date"
+            android:entryValues="@array/popularity_or_date"
+            android:key="list_preference_1"
+            android:title="@string/sort_posts"
+            android:summary="%s"/>
+        <ListPreference
+            android:defaultValue="popularity"
+            android:entries="@array/popularity_or_date"
+            android:entryValues="@array/popularity_or_date"
+            android:key="list_preference_1"
+            android:title="@string/sort_comments"
+            android:summary="%s"/>
+        <!--PITAJ ZA OVAJ KEY-->
+
+    </PreferenceCategory>
     <PreferenceCategory
         android:title="Auto data sync"
         android:key="sync_settings">

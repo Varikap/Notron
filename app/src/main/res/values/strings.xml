@@ -111,7 +111,7 @@
     <string name="notif_on_my_review_key">notif_on_my_review</string>
     <string name="notif_on_my_comment_key">notif_on_my_comment</string>
     <string name="notif_on_my_review_summ">Send you notifications on reviews that you have created after sync</string>
-    <string name="notif_on_my_comment_summ">Send you notifications on reviews that you have ccommented after sync</string>
+    <string name="notif_on_my_comment_summ">Send you notifications on reviews that you have commented after sync</string>
 
     <string name="notif_on_sync_key">notif_on_sync</string>
     <string name="notif_on_sync_summ">Send you notifications about sync</string>
@@ -248,4 +248,12 @@
     <string name="pref_ringtone_silent">Silent</string>
 
     <string name="pref_title_vibrate">Vibrate</string>
+
+
+    <string name="see_posts_from">See posts from</string>
+    <string name="see_posts_from_key">See posts from key</string>
+    <string name="see_posts_from_title">See posts from title</string>
+    <string name="posts">Posts</string>
+    <string name="sort_posts">Sort posts by</string>
+    <string name="sort_comments">Sort comments by</string>
 </resources>
