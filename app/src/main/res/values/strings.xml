@@ -256,4 +256,5 @@
     <string name="posts">Posts</string>
     <string name="sort_posts">Sort posts by</string>
     <string name="sort_comments">Sort comments by</string>
+    <string name="posts_toolbar">posts toolbars</string>
 </resources>

@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toolbar;
 
 public class PostsActivity extends AppCompatActivity {
 
@@ -18,6 +19,10 @@ public class PostsActivity extends AppCompatActivity {
         btnCreatePost.setOnClickListener(createListener);
         btnReadPost.setOnClickListener(readListener);
         btnSettings.setOnClickListener(settingsListener);
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.posts_toolbar);
+        setSupportActionBar(myToolbar);
+
     }
 
     View.OnClickListener settingsListener = new View.OnClickListener() {
