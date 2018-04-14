@@ -3,9 +3,12 @@ package com.example.karl.notron;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.support.v7.widget.Toolbar;
 import android.widget.Button;
-import android.widget.Toolbar;
 
 public class PostsActivity extends AppCompatActivity {
 
@@ -20,8 +23,8 @@ public class PostsActivity extends AppCompatActivity {
         btnReadPost.setOnClickListener(readListener);
         btnSettings.setOnClickListener(settingsListener);
 
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.posts_toolbar);
-        setSupportActionBar(myToolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolBar);
+        setSupportActionBar(toolbar);
 
     }
 
@@ -46,6 +49,35 @@ public class PostsActivity extends AppCompatActivity {
             startActivity(i);
         }
     };
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuinf = getMenuInflater();
+        menuinf.inflate(R.menu.app_bar, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId())
+        {
+            case R.id.action_new_post:
+                Intent i = new Intent(this,CreatePostActivity.class);
+                startActivity(i);
+                break;
+
+            case R.id.action_settings:
+                Intent j = new Intent(this,SettingsActivity.class);
+                startActivity(j);
+                break;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+        return true;
+    }
+
     @Override
     protected void onStart() {
         super.onStart();

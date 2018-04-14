@@ -6,18 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.example.karl.notron.PostsActivity">
 
-
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/posts_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+    <include layout="@layout/toolbar_layout" />
 
     <Button
         android:id="@+id/buttonSettings"

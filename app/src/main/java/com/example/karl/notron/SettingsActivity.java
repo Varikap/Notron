@@ -3,6 +3,7 @@ package com.example.karl.notron;
 import android.preference.PreferenceActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 
 public class SettingsActivity extends PreferenceActivity {
 
