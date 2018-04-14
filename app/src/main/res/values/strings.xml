@@ -257,4 +257,7 @@
     <string name="sort_posts">Sort posts by</string>
     <string name="sort_comments">Sort comments by</string>
     <string name="posts_toolbar">posts toolbars</string>
+    <string name="create_post">Create post</string>
+    <string name="read_posts">Read posts</string>
+    <string name="settings">Settings</string>
 </resources>

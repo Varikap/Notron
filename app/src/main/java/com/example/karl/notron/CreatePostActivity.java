@@ -17,7 +17,6 @@ public class CreatePostActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.include3);
         toolbar.setTitle("Create post");
-        toolbar.set
         setSupportActionBar(toolbar);
     }
 
