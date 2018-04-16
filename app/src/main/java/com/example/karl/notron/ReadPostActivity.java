@@ -28,6 +28,7 @@ public class ReadPostActivity extends AppCompatActivity {
 
 
         mDrawer = findViewById(R.id.drawer_layout);
+        mDrawer.closeDrawers();
         NavigationView navView = findViewById(R.id.nav_view);
         navView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {

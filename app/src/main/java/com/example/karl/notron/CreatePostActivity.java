@@ -1,6 +1,11 @@
 package com.example.karl.notron;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -9,6 +14,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 public class CreatePostActivity extends AppCompatActivity {
+    private DrawerLayout mDrawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +24,32 @@ public class CreatePostActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.include3);
         toolbar.setTitle("Create post");
         setSupportActionBar(toolbar);
+
+        mDrawer = findViewById(R.id.drawer_layout);
+        mDrawer.closeDrawers();
+        NavigationView navView = findViewById(R.id.nav_view);
+        navView.setNavigationItemSelectedListener(
+                new NavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        item.setChecked(true);
+                        switch (item.getItemId()){
+                            case R.id.create_post_drawer:
+                                startActivity(new Intent(CreatePostActivity.this, CreatePostActivity.class));
+                                break;
+                            case R.id.settings_drawer:
+                                startActivity(new Intent(CreatePostActivity.this, SettingsActivity.class));
+                                break;
+                        }
+                        mDrawer.closeDrawers();
+                        return true;
+                    }
+                }
+        );
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeAsUpIndicator(R.drawable.ic_menu_black_24dp);
     }
 
     @Override
@@ -39,6 +71,10 @@ public class CreatePostActivity extends AppCompatActivity {
             case R.id.action_settings:
                 Intent j = new Intent(this,SettingsActivity.class);
                 startActivity(j);
+                break;
+
+            case android.R.id.home:
+                mDrawer.openDrawer(GravityCompat.START);
                 break;
 
             default:
