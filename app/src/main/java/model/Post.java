@@ -1,24 +1,42 @@
 package model;
 
 import android.graphics.Bitmap;
-import android.location.Location;
-import android.nfc.Tag;
 
 import java.util.Date;
 import java.util.List;
 
 public class Post {
     private int id;
+    private String title;
     private String description;
     private Bitmap photo;
     private User author;
     private Date date;
-    private Location location;
+    private double longitude;
+    private double latitude;
     private List<Tag> tags;
-//    private List<Comment> comments;
+    private List<Comment> comments;
     private int likes;
     private int dislikes;
 
+    public Post(){
+
+    }
+
+    public Post(int id, String title, String description, Bitmap photo, User author, Date date, double longitude, double latitude, List<Tag> tags, List<Comment> comments, int likes, int dislikes) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.photo = photo;
+        this.author = author;
+        this.date = date;
+        this.longitude = longitude;
+        this.latitude = latitude;
+        this.tags = tags;
+        this.comments = comments;
+        this.likes = likes;
+        this.dislikes = dislikes;
+    }
 
     public int getId() {
         return id;
@@ -26,6 +44,14 @@ public class Post {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getDescription() {
@@ -60,12 +86,20 @@ public class Post {
         this.date = date;
     }
 
-    public Location getLocation() {
-        return location;
+    public double getLongitude() {
+        return longitude;
     }
 
-    public void setLocation(Location location) {
-        this.location = location;
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
     }
 
     public List<Tag> getTags() {
@@ -74,6 +108,14 @@ public class Post {
 
     public void setTags(List<Tag> tags) {
         this.tags = tags;
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
     }
 
     public int getLikes() {

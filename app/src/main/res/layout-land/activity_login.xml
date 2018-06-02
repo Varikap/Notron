@@ -29,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline3"
-        tools:text="Name" />
+        tools:text="Username" />
 
     <EditText
         android:id="@+id/passwordBox"
@@ -40,12 +40,13 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="@+id/usernameText"
         app:layout_constraintStart_toStartOf="@+id/usernameText"
-        app:layout_constraintTop_toBottomOf="@+id/usernameText" />
+        app:layout_constraintTop_toBottomOf="@+id/usernameText"
+        tools:text="Password" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="188dp" />
+        app:layout_constraintGuide_begin="128dp" />
 </android.support.constraint.ConstraintLayout>
