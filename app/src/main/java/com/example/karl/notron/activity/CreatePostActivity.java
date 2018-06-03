@@ -1,8 +1,6 @@
-package com.example.karl.notron;
+package com.example.karl.notron.activity;
 
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -10,54 +8,35 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 
-public class ReadPostActivity extends AppCompatActivity {
+import com.example.karl.notron.R;
 
+public class CreatePostActivity extends AppCompatActivity {
     private DrawerLayout mDrawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_read_post);
+        setContentView(R.layout.activity_create_post);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.include);
-        toolbar.setTitle("Posts");
+        mDrawer = findViewById(R.id.drawerLayout);
+        Toolbar toolbar = findViewById(R.id.create_posts_toolbar);
         setSupportActionBar(toolbar);
+        toolbar.setTitle("Create post");
 
+        final ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_menu_black_24dp); //nadji beo
+            actionBar.setHomeButtonEnabled(true);
+        }
 
-        mDrawer = findViewById(R.id.drawer_layout);
-        mDrawer.closeDrawers();
-        NavigationView navView = findViewById(R.id.nav_view);
-        navView.setNavigationItemSelectedListener(
-                new NavigationView.OnNavigationItemSelectedListener() {
-                    @Override
-                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                        item.setChecked(true);
-                        switch (item.getItemId()){
-                            case R.id.create_post_drawer:
-                                startActivity(new Intent(ReadPostActivity.this, CreatePostActivity.class));
-                                break;
-                            case R.id.settings_drawer:
-                                startActivity(new Intent(ReadPostActivity.this, SettingsActivity.class));
-                                break;
-                        }
-                        mDrawer.closeDrawers();
-                        return true;
-                    }
-                }
-        );
-
-        ActionBar  actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.ic_menu_black_24dp);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuinfl = getMenuInflater();
-        menuinfl.inflate(R.menu.app_bar, menu);
+        getMenuInflater().inflate(R.menu.app_bar,menu);
         return true;
     }
 

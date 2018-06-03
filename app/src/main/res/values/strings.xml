@@ -126,11 +126,9 @@
 
     <string name="sync_data">Sync data</string>
 
-    <string name="home_long">Map</string>
     <string name="groups_long">User groups</string>
     <string name="places_long">Places to review</string>
     <string name="preferences_long">Change your preferences</string>
-    <string name="about_long">Get to know about us</string>
     <string name="sync_data_long">Sync data from the repo</string>
 
     <string name="cant_aquire_account_message">iReviewr cannot acquire account information. Closing now.</string>
@@ -249,7 +247,10 @@
 
     <string name="pref_title_vibrate">Vibrate</string>
 
-
+    <string name="home_long">home</string>
+    <string name="create_long">create post</string>
+    <string name="settings_long">settings</string>
+    <string name="about_long">about</string>
     <string name="see_posts_from">See posts from</string>
     <string name="see_posts_from_key">See posts from key</string>
     <string name="see_posts_from_title">See posts from title</string>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:id="@+id/komentar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp">
+
+            <TextView
+                android:id="@+id/korisnicko"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="korisnicko"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/komentar_sadrzaj"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/komentar_datum"
+                android:layout_marginRight="10dp"
+                android:text="sadrzaj komentara" />
+
+            <TextView
+                android:id="@+id/komentar_datum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/korisnicko"
+                android:text="date" />
+
+            <TextView
+                android:id="@+id/lokacija"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/korisnicko"
+                android:text="location" />
+
+            <RadioGroup
+                android:id="@+id/comments_radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:onClick="onRadioGroupClicked"
+                android:layout_below="@id/komentar_sadrzaj">
+
+                <RadioButton
+                    android:id="@+id/btn_like"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:button="@null" />
+                    <!--android:background="@drawable/custom_radio_btn_up"-->
+
+
+                <TextView
+                    android:id="@+id/comment_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1234" />
+
+                <RadioButton
+                    android:id="@+id/btn_dislike"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:layout_toRightOf="@id/btn_like"
+                    android:button="@null" />
+                    <!--android:background="@drawable/custom_radio_btn_down"-->
+
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/delete_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="delete"
+                android:layout_below="@id/comments_radio_group"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</LinearLayout>

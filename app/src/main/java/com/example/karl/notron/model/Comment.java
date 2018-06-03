@@ -1,41 +1,34 @@
-package model;
+package com.example.karl.notron.model;
 
-import android.graphics.Bitmap;
+import android.os.AsyncTask;
 
 import java.util.Date;
-import java.util.List;
 
-public class Post {
+public class Comment {
     private int id;
     private String title;
     private String description;
-    private Bitmap photo;
     private User author;
     private Date date;
-    private double longitude;
-    private double latitude;
-    private List<Tag> tags;
-    private List<Comment> comments;
+    private Post post;
     private int likes;
     private int dislikes;
+    private AsyncTask.Status status;
 
-    public Post(){
+    public Comment(){
 
     }
 
-    public Post(int id, String title, String description, Bitmap photo, User author, Date date, double longitude, double latitude, List<Tag> tags, List<Comment> comments, int likes, int dislikes) {
+    public Comment(int id, String title, String description, User author, Date date, Post post, int likes, int dislikes, AsyncTask.Status status) {
         this.id = id;
         this.title = title;
         this.description = description;
-        this.photo = photo;
         this.author = author;
         this.date = date;
-        this.longitude = longitude;
-        this.latitude = latitude;
-        this.tags = tags;
-        this.comments = comments;
+        this.post = post;
         this.likes = likes;
         this.dislikes = dislikes;
+        this.status = status;
     }
 
     public int getId() {
@@ -62,14 +55,6 @@ public class Post {
         this.description = description;
     }
 
-    public Bitmap getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(Bitmap photo) {
-        this.photo = photo;
-    }
-
     public User getAuthor() {
         return author;
     }
@@ -86,36 +71,12 @@ public class Post {
         this.date = date;
     }
 
-    public double getLongitude() {
-        return longitude;
+    public Post getPost() {
+        return post;
     }
 
-    public void setLongitude(double longitude) {
-        this.longitude = longitude;
-    }
-
-    public double getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
-    }
-
-    public List<Tag> getTags() {
-        return tags;
-    }
-
-    public void setTags(List<Tag> tags) {
-        this.tags = tags;
-    }
-
-    public List<Comment> getComments() {
-        return comments;
-    }
-
-    public void setComments(List<Comment> comments) {
-        this.comments = comments;
+    public void setPost(Post post) {
+        this.post = post;
     }
 
     public int getLikes() {
@@ -132,5 +93,13 @@ public class Post {
 
     public void setDislikes(int dislikes) {
         this.dislikes = dislikes;
+    }
+
+    public AsyncTask.Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(AsyncTask.Status status) {
+        this.status = status;
     }
 }

@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.karl.notron.SettingsActivity">
+    tools:context="com.example.karl.notron.activity.SettingsActivity">
 
-    <include layout="@layout/toolbar_layout" />
+    <include layout="@layout/toolbar_layout"
+        android:id="@+id/settings_toolbar"/>
 
 </android.support.constraint.ConstraintLayout>

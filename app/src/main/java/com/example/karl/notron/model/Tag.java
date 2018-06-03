@@ -1,4 +1,4 @@
-package model;
+package com.example.karl.notron.model;
 
 import java.util.List;
 

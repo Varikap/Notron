@@ -1,9 +1,12 @@
-package com.example.karl.notron;
+package com.example.karl.notron.activity;
 
 import android.preference.PreferenceActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
+
+import com.example.karl.notron.R;
 
 public class SettingsActivity extends PreferenceActivity {
 
@@ -11,6 +14,11 @@ public class SettingsActivity extends PreferenceActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.preferences);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
