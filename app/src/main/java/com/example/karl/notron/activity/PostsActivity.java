@@ -26,6 +26,7 @@ import com.example.karl.notron.model.Post;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class PostsActivity extends AppCompatActivity {
 
@@ -37,12 +38,13 @@ public class PostsActivity extends AppCompatActivity {
     private CharSequence mDrawerTitle;
     private CharSequence mTitle;
     private SharedPreferences sharedPreferences;
+    private ListView listView;
+
 
     private Post post = new Post();
     private Post post1 = new Post();
-    private Post post3 = new Post();
     private PostAdapter postAdapter;
-    private ListView listView;
+    private List<Post> posts = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +76,24 @@ public class PostsActivity extends AppCompatActivity {
 
         initializePostsObj();
 
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close);
+        mDrawerLayout.addDrawerListener(mDrawerToggle);
+        //nzm sta radi ova linija ispod
+        mDrawerToggle.syncState();
+
+        postAdapter = new PostAdapter(PostsActivity.this,posts);
+        listView = findViewById(R.id.post_list);
+        listView.setAdapter(postAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                post = posts.get(position);
+                Intent i = new Intent(PostsActivity.this, ReadPostActivity.class);
+                i.putExtra("Post", post.getId());
+                startActivity(i);
+            }
+        });
     }
 
     @Override
@@ -107,7 +127,6 @@ public class PostsActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
-
         return true;
     }
 
@@ -173,16 +192,17 @@ public class PostsActivity extends AppCompatActivity {
 
     private void initializePostsObj() {
         post.setDate(new Date(2018-1900, 1, 1, 10, 10));
-        post.setTitle("Eight things to expect at Google I/O 2018");
-        post.setDescription("Google’s annual developer conference will be a jam-packed affair " +
-                "about the future of Android, AI, and the smart home");
+        post.setDescription("At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias exceptur");
         post.setTitle("Naslov");
         post.setLikes(3);
 
-        post3.setDate(new Date(2018-1900, 2, 1, 10, 10));
-        post3.setTitle("Naslov2");
-        post3.setDescription("At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi");
-        post3.setLikes(22);
+        post1.setDate(new Date(2018-1900, 2, 1, 10, 10));
+        post1.setTitle("Naslov2");
+        post1.setDescription("At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi");
+        post1.setLikes(22);
+
+        posts.add(post);
+        posts.add(post1);
     }
 
     @Override
@@ -200,6 +220,12 @@ public class PostsActivity extends AppCompatActivity {
         super.onPostResume();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+//        napravi neku funkiciju koja ce da pogleda sta je sa podesavanjima
+        postAdapter.notifyDataSetChanged();
+    }
 
     @Override
     protected void onPause() {

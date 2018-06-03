@@ -27,7 +27,7 @@ public class ReadPostActivity extends AppCompatActivity {
         mDrawer = findViewById(R.id.drawerLayout);
         Toolbar toolbar = findViewById(R.id.create_posts_toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setTitle("Create post");
+        //toolbar.setTitle("Create post");
 
         final ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {

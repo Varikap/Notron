@@ -43,9 +43,7 @@ public class User {
         this.name = name;
     }
 
-    public Bitmap getPhoto() {
-        return photo;
-    }
+    public Bitmap getPhoto() { return photo; }
 
     public void setPhoto(Bitmap photo) {
         this.photo = photo;
