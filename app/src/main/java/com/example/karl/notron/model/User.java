@@ -8,6 +8,7 @@ public class User {
     private int id;
     private String name;
     private Bitmap photo;
+    private String mPhotoPath;
     private String username;
     private String password;
     private List<Post> posts;
@@ -25,6 +26,29 @@ public class User {
         this.password = password;
         this.posts = posts;
         this.comments = comments;
+    }
+
+    public User(int id, String name, String username, String password, String photoPath) {
+        this.id = id;
+        this.name = name;
+        this.username = username;
+        this.password = password;
+        mPhotoPath = photoPath;
+    }
+
+    public User(String name, String username, String password, String photoPath) {
+        this.name = name;
+        this.username = username;
+        this.password = password;
+        mPhotoPath = photoPath;
+    }
+
+    public String getPhotoPath() {
+        return mPhotoPath;
+    }
+
+    public void setPhotoPath(String mPhotoPath) {
+        this.mPhotoPath = mPhotoPath;
     }
 
     public int getId() {
