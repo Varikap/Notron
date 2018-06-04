@@ -22,7 +22,7 @@ public class CommentCursorWrapper extends CursorWrapper {
             String description = getString(getColumnIndex(Cols.DESCRIPTION));
             int userId = Integer.parseInt(getString(getColumnIndex(Cols.USER_ID)));
             String string_date = getString(getColumnIndex(Cols.DATE));
-            Date date = new SimpleDateFormat("dd/MM/yyyy").parse(string_date);
+            Date date = new SimpleDateFormat("dd.MM.yy").parse(string_date);
             int post_id = Integer.parseInt(getString(getColumnIndex(Cols.POST_ID)));
             int likes = Integer.parseInt(getString(getColumnIndex(Cols.LIKES)));
             int dislikes = Integer.parseInt(getString(getColumnIndex(Cols.DISLIKES)));

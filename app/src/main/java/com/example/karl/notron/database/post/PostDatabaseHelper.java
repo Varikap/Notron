@@ -19,7 +19,7 @@ public class PostDatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table " + PostDbSchema.PostTable.TABLE_NAME + "(" +
-                " " + Cols.ID + "integer primary key autoincrement, " +
+                " " + Cols.ID + " integer primary key autoincrement, " +
         Cols.TITLE + ", " +
         Cols.DESCRIPTION + ", " +
         Cols.PHOTO_PATH + ", " +

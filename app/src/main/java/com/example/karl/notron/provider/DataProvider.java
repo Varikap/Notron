@@ -8,10 +8,14 @@ public class DataProvider {
     private UserProvider mUserProvider;
     private PostProvider mPostProvider;
     private CommentProvider mCommentProvider;
+    private TagProvider mTagProvider;
 
     public DataProvider(Context context) {
         mContext = context;
         mUserProvider = new UserProvider(mContext);
+        mPostProvider = new PostProvider(mContext);
+        mCommentProvider = new CommentProvider(mContext);
+        mTagProvider = new TagProvider(mContext);
     }
 
     public static DataProvider getSingletone(Context context) {
@@ -31,5 +35,9 @@ public class DataProvider {
 
     public CommentProvider getCommentProvider() {
         return mCommentProvider;
+    }
+
+    public TagProvider getTagProvider() {
+        return mTagProvider;
     }
 }

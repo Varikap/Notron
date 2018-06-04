@@ -21,7 +21,7 @@ public class CommentDatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table " + CommentDbSchema.CommentTable.TABLE_NAME + "(" +
-                " " + Cols.ID + "integer primary key autoincrement, " +
+                " " + Cols.ID + " integer primary key autoincrement, " +
                 Cols.TITLE + ", " +
                 Cols.DESCRIPTION + ", " +
                 Cols.POST_ID + ", " +
