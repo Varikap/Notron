@@ -1,4 +1,4 @@
-package com.example.karl.notron.provider.user;
+package com.example.karl.notron.provider;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -24,7 +24,7 @@ public class UserProvider implements IUserProvider {
     private Context mContext;
     private SQLiteDatabase mDatabase;
 
-    public UserProvider(Context context){
+    UserProvider(Context context){
         mContext = context;
         mDatabase = new UserDatabaseHelper(context).getWritableDatabase();
     }

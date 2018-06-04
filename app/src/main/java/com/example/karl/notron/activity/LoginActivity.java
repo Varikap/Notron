@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.karl.notron.R;
 import com.example.karl.notron.model.User;
@@ -22,6 +23,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         Button b = (Button) findViewById(R.id.buttonLogin);
         b.setOnClickListener(listener);
+        test();
     }
 
     public void test(){
@@ -55,7 +57,7 @@ public class LoginActivity extends AppCompatActivity {
         Log.d(TAG, "test: LOADDDD ");
         list = DataProvider.getSingletone(getApplicationContext()).getUserProvider().loadUsers();
         for (User u : list) {
-            Log.d(TAG, "test: "+u);
+            Log.d(TAG, "test: "+u.getName());
         }
         Log.d(TAG, "test: "+list.size());
     }

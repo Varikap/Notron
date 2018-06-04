@@ -9,14 +9,27 @@ public class Comment {
     private String title;
     private String description;
     private User author;
+    private int authorId;
     private Date date;
     private Post post;
+    private int postId;
     private int likes;
     private int dislikes;
     private AsyncTask.Status status;
 
     public Comment(){
 
+    }
+
+    public Comment(int id, String title, String description, int authorId, Date date, int postId, int likes, int dislikes) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.authorId = authorId;
+        this.date = date;
+        this.postId = postId;
+        this.likes = likes;
+        this.dislikes = dislikes;
     }
 
     public Comment(int id, String title, String description, User author, Date date, Post post, int likes, int dislikes, AsyncTask.Status status) {
@@ -29,6 +42,22 @@ public class Comment {
         this.likes = likes;
         this.dislikes = dislikes;
         this.status = status;
+    }
+
+    public int getAuthorId() {
+        return authorId;
+    }
+
+    public void setAuthorId(int authorId) {
+        this.authorId = authorId;
+    }
+
+    public int getPostId() {
+        return postId;
+    }
+
+    public void setPostId(int postId) {
+        this.postId = postId;
     }
 
     public int getId() {

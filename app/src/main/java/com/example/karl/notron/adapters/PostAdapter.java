@@ -20,6 +20,8 @@ public class PostAdapter extends ArrayAdapter<Post> {
         super(context, 0, posts);
     }
 
+
+
     @Override
     public View getView(int position, View view, ViewGroup viewGroup){
         Post post = getItem(position);

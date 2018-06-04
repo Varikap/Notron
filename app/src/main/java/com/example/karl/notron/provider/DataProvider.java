@@ -2,12 +2,12 @@ package com.example.karl.notron.provider;
 
 import android.content.Context;
 
-import com.example.karl.notron.provider.user.UserProvider;
-
 public class DataProvider {
     private static DataProvider sSingletone;
     private Context mContext;
     private UserProvider mUserProvider;
+    private PostProvider mPostProvider;
+    private CommentProvider mCommentProvider;
 
     public DataProvider(Context context) {
         mContext = context;
@@ -23,5 +23,13 @@ public class DataProvider {
 
     public UserProvider getUserProvider() {
         return mUserProvider;
+    }
+
+    public PostProvider getPostProvider() {
+        return mPostProvider;
+    }
+
+    public CommentProvider getCommentProvider() {
+        return mCommentProvider;
     }
 }

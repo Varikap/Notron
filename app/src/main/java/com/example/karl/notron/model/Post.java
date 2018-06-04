@@ -10,7 +10,9 @@ public class Post {
     private String title;
     private String description;
     private Bitmap photo;
+    private String photo_path;
     private User author;
+    private int authorId;
     private Date date;
     private double longitude;
     private double latitude;
@@ -21,6 +23,17 @@ public class Post {
 
     public Post(){
 
+    }
+
+    public Post(int id, String title, String description, String photo_path, int authorId, Date date, int likes, int dislikes) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.photo_path = photo_path;
+        this.authorId = authorId;
+        this.date = date;
+        this.likes = likes;
+        this.dislikes = dislikes;
     }
 
     public Post(int id, String title, String description, Bitmap photo, User author, Date date, double longitude, double latitude, List<Tag> tags, List<Comment> comments, int likes, int dislikes) {
@@ -36,6 +49,22 @@ public class Post {
         this.comments = comments;
         this.likes = likes;
         this.dislikes = dislikes;
+    }
+
+    public int getAuthorId() {
+        return authorId;
+    }
+
+    public void setAuthorId(int authorId) {
+        this.authorId = authorId;
+    }
+
+    public String getPhoto_path() {
+        return photo_path;
+    }
+
+    public void setPhoto_path(String photo_path) {
+        this.photo_path = photo_path;
     }
 
     public int getId() {
