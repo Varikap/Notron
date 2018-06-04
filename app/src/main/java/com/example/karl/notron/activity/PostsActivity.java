@@ -23,6 +23,7 @@ import com.example.karl.notron.adapters.DrawerListAdapter;
 import com.example.karl.notron.adapters.PostAdapter;
 import com.example.karl.notron.model.NavItem;
 import com.example.karl.notron.model.Post;
+import com.example.karl.notron.provider.DataProvider;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -81,7 +82,7 @@ public class PostsActivity extends AppCompatActivity {
         //nzm sta radi ova linija ispod
         mDrawerToggle.syncState();
 
-        postAdapter = new PostAdapter(PostsActivity.this,posts);
+        postAdapter = new PostAdapter(PostsActivity.this, DataProvider.getSingletone(this).getPostProvider().loadPosts());
         listView = findViewById(R.id.post_list);
         listView.setAdapter(postAdapter);
 
@@ -191,12 +192,12 @@ public class PostsActivity extends AppCompatActivity {
     }
 
     private void initializePostsObj() {
-        post.setDate(new Date(2018-1900, 1, 1, 10, 10));
+        post.setDate(new Date(2018-1900, 1, 1, 10, 10).toString());
         post.setDescription("At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias exceptur");
         post.setTitle("Naslov");
         post.setLikes(3);
 
-        post1.setDate(new Date(2018-1900, 2, 1, 10, 10));
+        post1.setDate(new Date(2018-1900, 2, 1, 10, 10).toString());
         post1.setTitle("Naslov2");
         post1.setDescription("At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi");
         post1.setLikes(22);

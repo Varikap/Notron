@@ -2,7 +2,7 @@ package com.example.karl.notron.model;
 
 import android.os.AsyncTask;
 
-import java.util.Date;
+import java.lang.String;
 
 public class Comment {
     private int id;
@@ -10,7 +10,7 @@ public class Comment {
     private String description;
     private User author;
     private int authorId;
-    private Date date;
+    private String date;
     private Post post;
     private int postId;
     private int likes;
@@ -21,7 +21,7 @@ public class Comment {
 
     }
 
-    public Comment(int id, String title, String description, int authorId, Date date, int postId, int likes, int dislikes) {
+    public Comment(int id, String title, String description, int authorId, String date, int postId, int likes, int dislikes) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -32,7 +32,7 @@ public class Comment {
         this.dislikes = dislikes;
     }
 
-    public Comment(int id, String title, String description, User author, Date date, Post post, int likes, int dislikes, AsyncTask.Status status) {
+    public Comment(int id, String title, String description, User author, String date, Post post, int likes, int dislikes, AsyncTask.Status status) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -92,11 +92,11 @@ public class Comment {
         this.author = author;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

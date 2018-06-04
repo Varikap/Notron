@@ -20,7 +20,10 @@ public class PostAdapter extends ArrayAdapter<Post> {
         super(context, 0, posts);
     }
 
-
+    @Override
+    public int getCount() {
+        return super.getCount();
+    }
 
     @Override
     public View getView(int position, View view, ViewGroup viewGroup){
@@ -36,11 +39,11 @@ public class PostAdapter extends ArrayAdapter<Post> {
         ImageView image_view = view.findViewById(R.id.image_view);
         TextView description = view.findViewById(R.id.description);
 
-        String newDate = new SimpleDateFormat("dd.MM.yyyy HH:mm").format(post.getDate());
-        String likes = Integer.toString(post.getLikes());
+//        String newDate = new SimpleDateFormat("dd.MM.yyyy HH:mm").format(post.getDate());
+         String likes = Integer.toString(post.getLikes());
 //        String image = post.getPhoto().toString();
 
-        date_view.setText(newDate);
+        date_view.setText(post.getDate());
         title_view.setText(post.getTitle());
         likes_view.setText(likes);
 //        image_view.setImageBitmap(post.getPhoto());

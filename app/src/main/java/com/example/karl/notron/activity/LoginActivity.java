@@ -15,7 +15,9 @@ import com.example.karl.notron.model.Tag;
 import com.example.karl.notron.model.User;
 import com.example.karl.notron.provider.DataProvider;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -28,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         Button b = (Button) findViewById(R.id.buttonLogin);
         b.setOnClickListener(listener);
-        testUser();
+//        testUser();
         testComment();
         testPost();
         testTag();
@@ -107,7 +109,7 @@ public class LoginActivity extends AppCompatActivity {
     public void testPost () {
         Log.e(TAG, "test: ADDDDD POOOOOOST");
         for (int i=0; i<10; i++) {
-            Post u = new Post(i,"Title " + i, "Description" + i, "Photo_path" + i, i, new Date(), i+10,i);
+            Post u = new Post(i,"Title " + i, "Description" + i, "Photo_path" + i, i, new Date().toString(), i+10,i);
             DataProvider.getSingletone(getApplicationContext()).getPostProvider().add(u);
         }
 
@@ -128,7 +130,7 @@ public class LoginActivity extends AppCompatActivity {
         list.get(0).setTitle("Cevap");
         list.get(0).setDescription("Cevap");
         list.get(0).setPhoto_path("Cevap");
-        list.get(0).setDate(new Date());
+        list.get(0).setDate(new Date().toString());
         list.get(0).setLikes(666);
         list.get(0).setDislikes(999);
         DataProvider.getSingletone(getApplicationContext()).getPostProvider().update(list.get(0));
@@ -150,12 +152,21 @@ public class LoginActivity extends AppCompatActivity {
 
     public void testComment () {
 
-        Log.e(TAG, "test: ADDDDD COOOOOOOOOOOOM");
-        for (int i=0; i<10; i++) {
-            Comment u = new Comment(i, "Name" + i,"Description" + i,i,new Date("dd/MM/yyyy"),i,16+i,i);
-            DataProvider.getSingletone(getApplicationContext()).getCommentProvider().add(u);
-            Log.e(TAG, "testComment: VREMEEEEEEEEEEEEEEEEEEEEE" + u.getDate());
-        }
+
+            Calendar calendar = Calendar.getInstance();
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+
+
+            Log.e(TAG, "test: ADDDDD COOOOOOOOOOOOM");
+            for (int i=0; i<10; i++) {
+//                String currentDate = calendar.get(Calendar.DAY_OF_MONTH)+ "/"  + calendar.get(Calendar.MONTH) + "/" + calendar.get(Calendar.YEAR) + " " +
+//                        calendar.get(Calendar.HOUR_OF_DAY) + ":" + calendar.get(Calendar.MINUTE)+ ":" + calendar.get(Calendar.SECOND);
+//                Date d = simpleDateFormat.parse(currentDate);
+//                Log.e(TAG, "testComment: DAAAAAAAAAAAAAAAAAATE" + d.getTime());
+                Comment u = new Comment(i, "Name" + i,"Description" + i,i, new Date().toString() ,i,16+i,i);
+                DataProvider.getSingletone(getApplicationContext()).getCommentProvider().add(u);
+                Log.e(TAG, "testComment: VREMEEEEEEEEEEEEEEEEEEEEE" + u.getDate());
+            }
 
 
         Log.e(TAG, "test: LOADDDD COOOOOOOOOOOOM");
@@ -173,7 +184,7 @@ public class LoginActivity extends AppCompatActivity {
         Log.d(TAG, "test: UPDATEE ");
         list.get(0).setTitle("Cevap");
         list.get(0).setDescription("Cevap");
-        list.get(0).setDate(new Date());
+        list.get(0).setDate(new Date().toString());
         list.get(0).setLikes(666);
         list.get(0).setDislikes(999);
         DataProvider.getSingletone(getApplicationContext()).getCommentProvider().update(list.get(0));

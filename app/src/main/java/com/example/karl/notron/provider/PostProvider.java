@@ -61,8 +61,7 @@ public class PostProvider implements IPostProvider{
     }
 
     private PostCursorWrapper queryCursor(@Nullable String whereClaus, @Nullable String[] whereArgs) {
-        Cursor cursor = mDatabase.query(
-                UserDbSchema.UserTable.TABLE_NAME,
+        Cursor cursor = mDatabase.query(PostDbSchema.PostTable.TABLE_NAME,
                 null, // Columns - null means select all columns
                 whereClaus,
                 whereArgs,

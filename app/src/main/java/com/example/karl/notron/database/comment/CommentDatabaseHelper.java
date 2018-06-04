@@ -11,7 +11,7 @@ import com.example.karl.notron.database.comment.CommentDbSchema.CommentTable.*;
 
 public class CommentDatabaseHelper extends SQLiteOpenHelper {
     private static final String TAG = "CommentDatabaseHelper";
-    public static final String DATABASE_NAME = "commentDatabase.db";
+    public static final String DATABASE_NAME = "commmentDatabase.db";
     public static final int VERSION = 1;
 
     public  CommentDatabaseHelper (Context context) {

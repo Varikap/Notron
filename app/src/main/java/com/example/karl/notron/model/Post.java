@@ -2,7 +2,6 @@ package com.example.karl.notron.model;
 
 import android.graphics.Bitmap;
 
-import java.util.Date;
 import java.util.List;
 
 public class Post {
@@ -13,7 +12,7 @@ public class Post {
     private String photo_path;
     private User author;
     private int authorId;
-    private Date date;
+    private String date;
     private double longitude;
     private double latitude;
     private List<Tag> tags;
@@ -25,7 +24,7 @@ public class Post {
 
     }
 
-    public Post(int id, String title, String description, String photo_path, int authorId, Date date, int likes, int dislikes) {
+    public Post(int id, String title, String description, String photo_path, int authorId, String date, int likes, int dislikes) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -36,7 +35,7 @@ public class Post {
         this.dislikes = dislikes;
     }
 
-    public Post(int id, String title, String description, Bitmap photo, User author, Date date, double longitude, double latitude, List<Tag> tags, List<Comment> comments, int likes, int dislikes) {
+    public Post(int id, String title, String description, Bitmap photo, User author, String date, double longitude, double latitude, List<Tag> tags, List<Comment> comments, int likes, int dislikes) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -107,11 +106,11 @@ public class Post {
         this.author = author;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

@@ -16,7 +16,7 @@ public class PostCursorWrapper extends CursorWrapper {
     }
 
     public Post getPost() {
-        try {
+//        try {
 
             int id = Integer.parseInt(getString(getColumnIndex(Cols.ID)));
             String title = getString(getColumnIndex(Cols.TITLE));
@@ -24,14 +24,14 @@ public class PostCursorWrapper extends CursorWrapper {
             String photo_path = getString(getColumnIndex(Cols.PHOTO_PATH));
             int userId = Integer.parseInt(getString(getColumnIndex(Cols.USER_ID)));
             String string_date = getString(getColumnIndex(Cols.DATE));
-            Date date = new SimpleDateFormat("dd/MM/yyyy").parse(string_date);
+//            Date date = new SimpleDateFormat("dd/MM/yyyy").parse(string_date);
             int likes = Integer.parseInt(getString(getColumnIndex(Cols.LIKES)));
             int dislikes = Integer.parseInt(getString(getColumnIndex(Cols.DISLIKES)));
-            return new Post(id, title, description, photo_path, userId, date, likes, dislikes);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+            return new Post(id, title, description, photo_path, userId, string_date, likes, dislikes);
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//        }
 
-        return null;
+//        return null;
     }
 }
